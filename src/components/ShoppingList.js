@@ -6,11 +6,10 @@ function ShoppingList({ items }) {
     setFilterBy(event.target.value);
   }
 
-  const [groceryItems, setItems] = useState(items);
   const [filterBy, setFilterBy] = useState("All");
 
 
-  const itemsToDisplay = groceryItems.filter((item) => {
+  const itemsToDisplay = items.filter((item) => {
     if (filterBy === "All") {
       return true;
     } else {
