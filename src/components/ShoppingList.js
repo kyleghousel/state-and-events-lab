@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import Item from "./Item";
+import React, { useState } from "react"
+import Item from "./Item"
 
 function ShoppingList({ items }) {
+
+  const [filterBy, setFilterBy] = useState("All")
+
   const handleFilterChange = (event) => {
-    setFilterBy(event.target.value);
+    setFilterBy(event.target.value)
   }
-
-  const [filterBy, setFilterBy] = useState("All");
-
 
   const itemsToDisplay = items.filter((item) => {
     if (filterBy === "All") {
-      return true;
+      return true
     } else {
-      return item.category === filterBy;
+      return item.category === filterBy
     }
-  });
+  })
 
   return (
     <div className="ShoppingList">
@@ -33,7 +33,7 @@ function ShoppingList({ items }) {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
-export default ShoppingList;
+export default ShoppingList
